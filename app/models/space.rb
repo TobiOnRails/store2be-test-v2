@@ -1,4 +1,5 @@
 class Space < ApplicationRecord
-    has_one :stores
-    belongs_to :bookings
+    has_many :bookings
+    has_many :organizations, :through => :bookings
+    belongs_to :stores
 end

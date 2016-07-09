@@ -1,4 +1,4 @@
 class Booking < ApplicationRecord
-  has_one :spaces
-  has_one :organizations
+  belongs_to :spaces
+  belongs_to :organizations
 end

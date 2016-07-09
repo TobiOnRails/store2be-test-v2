@@ -1,4 +1,7 @@
 class Organization < ApplicationRecord
-  belongs_to :stores
-  belongs_to :bookings
+  has_many :bookings
+  has_many :spaces, :through => :bookings
+  
+  has_many :stores
+  has_many :addresses, :through => :stores
 end

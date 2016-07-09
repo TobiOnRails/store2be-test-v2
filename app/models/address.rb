@@ -1,3 +1,4 @@
 class Address < ApplicationRecord
-  belongs_to :stores
+  has_many :stores
+  has_many :organizations, :through => :stores
 end

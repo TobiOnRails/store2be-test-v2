@@ -1,6 +1,5 @@
 class Store < ApplicationRecord
-  has_one :addresses
-  has_one :organizations
-  
-  belongs_to :spaces
+  has_many :spaces
+  belongs_to :address
+  belongs_to :organization
 end
