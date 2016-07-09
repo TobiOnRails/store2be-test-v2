@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  store: 1
+  title: MyString
+  price_per_day: 1
+  price_per_week: 1
+  price_per_month: 1
+
+two:
+  store: 1
+  title: MyString
+  price_per_day: 1
+  price_per_week: 1
+  price_per_month: 1
