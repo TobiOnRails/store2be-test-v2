@@ -22,13 +22,15 @@ ActiveRecord::Schema.define(version: 20160709130951) do
   end
 
   create_table "bookings", force: :cascade do |t|
-    t.integer  "space"
-    t.integer  "organization"
+    t.integer  "space_id"
+    t.integer  "organization_id"
     t.date     "start_date"
     t.date     "end_date"
     t.integer  "price"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["organization_id"], name: "index_bookings_on_organization_id"
+    t.index ["space_id"], name: "index_bookings_on_space_id"
   end
 
   create_table "organizations", force: :cascade do |t|
@@ -40,23 +42,26 @@ ActiveRecord::Schema.define(version: 20160709130951) do
   end
 
   create_table "spaces", force: :cascade do |t|
-    t.integer  "store"
+    t.integer  "store_id"
     t.string   "title"
     t.integer  "price_per_day"
     t.integer  "price_per_week"
     t.integer  "price_per_month"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.index ["store_id"], name: "index_spaces_on_store_id"
   end
 
   create_table "stores", force: :cascade do |t|
-    t.integer  "address"
-    t.integer  "organization"
+    t.integer  "address_id"
+    t.integer  "organization_id"
     t.string   "title"
     t.time     "opening"
     t.time     "closing"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["address_id"], name: "index_stores_on_address_id"
+    t.index ["organization_id"], name: "index_stores_on_organization_id"
   end
 
 end
